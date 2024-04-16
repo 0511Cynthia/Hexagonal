@@ -11,4 +11,5 @@ export interface EmployeeRepository {
     rol: string
   ): Promise<Employee | null>;
   deleteEmployee(celular: string): Promise<boolean | null>;
+  getById(id:string): Promise<Employee | null> 
 }
