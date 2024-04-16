@@ -8,7 +8,7 @@ dotenv.config();
 import { clientRouter } from './client/infraestructure/route/ClientRouter';
 import { employeeRouter } from './employee/infrastructure/route/EmployeeRouter';
 
-const port: string | undefined = 3000;
+const port: number | undefined = 3000;
 const app = express();
 const sigoptions = {
     secrets: ["([0-9]{4}-?)+"]
