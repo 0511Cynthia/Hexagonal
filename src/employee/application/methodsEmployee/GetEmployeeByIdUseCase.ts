@@ -11,12 +11,12 @@ export class GetEmployeeByIdUseCase{
             const result: any | null = await this.employeeRepository.getById(id);
             console.log("Datos de la consulta: ", result);
             return {
-                id: result?.id,
-                nombre: result?.nombre,
-                apPaterno: result?.apPaterno,
-                apMaterno: result?.apMaterno,
-                edad: result?.edad,
-                rol: result?.rol
+                id: result[0].id,
+                nombre: result[0].nombre,
+                apPaterno: result[0].apPaterno,
+                apMaterno: result[0].apMaterno,
+                edad: result[0].edad,
+                rol: result[0].rol
             };
         }catch(error){
             console.log(error);
