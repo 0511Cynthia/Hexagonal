@@ -6,7 +6,8 @@ export class GetEmployeeByIdController{
 
     async run(req: Request, res: Response){
         const id = req.params.id;
-        
+        const auxId = Number(id);
+
         if(!id ){
             return res.status(400).send({
                 status: "error",
@@ -15,7 +16,7 @@ export class GetEmployeeByIdController{
         }
         try{
             const result = await this.getEmployeeByIdUseCase.run(
-                id
+                auxId
             );
             if(result){
                 res.status(200).send({

@@ -58,8 +58,8 @@ export class MySqlEmployeeRepository implements EmployeeRepository {
       }
   }
 
-  async getById(id: string): Promise<Employee | null> {
-    const sql = "SELECT id FROM empleados WHERE id =?";
+  async getById(id: number): Promise<Employee | null> {
+    const sql = "SELECT id, nombre, apPaterno, apMaterno, edad, rol FROM empleados WHERE id =?";
     const params: any[] = [id];
 
     try{
